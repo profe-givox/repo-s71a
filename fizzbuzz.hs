@@ -2,7 +2,7 @@
 lessThan20 :: Int -> String
 lessThan20 n
 	| n > 0 && n<20 = 
-	let answers = ["one", "two", "three", "four", "five" ]
+	let answers = ["one", "two", "three", "four", "five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eigtheen","nineteen"]
 	in answers!!(n-1)
 
 tens :: Int -> String
@@ -19,3 +19,28 @@ numbers n
 	| n == 100 = "One hundred"
 
 fizzbuzz :: Int ->String
+fizzbuzz n 
+	| n > 100 = "sorry"
+	| ((n `mod` 3) == 0) && ((n `mod` 5) == 0) = "fizzbuzz"
+	| ((n `mod` 3) == 0) = "fizz"
+	| ((n `mod` 5) == 0) = "buzz"
+	| otherwise = numbers n 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
