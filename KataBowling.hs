@@ -18,8 +18,11 @@ toFrames pins = go 1 pins
 			| x + y == 10 = fmap (Spare x z :) $ go (n+1) (z:ys)
 			| x + y < 10 = fmap (Open x y :) $ go (n+1) (z:ys)
 			| otherwise = Nothing
-		go _ _ = Nothing		
+		go _ _ = Nothing
 
 
-
+frameToPoints :: Frame -> Int
+frameToPoints (Open x y) = x + y
+frameToPoints (Spare _ y) = 10 + y	
+frameToPoints (Strike x y) = 10 + x + y	
 
